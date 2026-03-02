@@ -1,0 +1,24 @@
+Tutorial Git:
+
+- Crear un repositorio vacio en local(hasta que no haces "push" no existe):
+    (En raiz del proyecto)
+        git init
+- Clonar un repositorio existente:
+    ()
+        git clone https://github...
+- Crear branch:
+    (Al iniciar un repositorio se debe crear la rama "main")
+        git checkout -b nombreramatodojunto
+- Cambiar de branch:
+    ()
+        git checkout nombreramatodojunto
+- Añadir o borrar ficheros:
+    ()
+        git add .
+- Añadir un "cambio":
+    ()
+        git commit -a -m "comentario descritptivo"
+- Subir los cambios:
+    ()
+        git push origin nombredelarama (main)
+
