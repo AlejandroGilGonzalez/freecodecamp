@@ -16,21 +16,21 @@ def count_perfect_cubes(num1, num2):
 
     count = 0
     if num1 < num2:
-        min = num1
-        max = num2
+        minim = num1
+        maxim = num2
     else:
-        min = num2
-        max = num1
+        minim = num2
+        maxim = num1
     
-    if min > 1:
-        for num in range(1, max+1):
+    if minim > 1:
+        for num in range(1, maxim+1):
             num = num ** 3
-            if num >= min and num < max:
+            if num >= minim and num < maxim:
                 count += 1
     else:
-        for num in range(min, max+1):
+        for num in range(minim, maxim+1):
             num = num ** 3
-            if num >= min and num <= max:
+            if num >= minim and num <= maxim:
                 count += 1
 
     return count
