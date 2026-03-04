@@ -8,7 +8,7 @@ where n * n * n = number. For example, 27 is a perfect cube because 3 * 3 * 3 = 
 
 #Challenge:
 
-def count_perfect_cubes(num1, num2):
+def count_perfect_cubes(num1:int, num2:int) -> int:
     """returns the perfect cubes in range
         :param num1: minimum
         :param num2: maximum
