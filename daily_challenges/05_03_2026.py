@@ -6,7 +6,6 @@ that have the smallest number of characters between them (smallest gap)
 """
 
 def smallest_gap(input: str) -> str:
-
     gap_chars = {}
 
     # Counts the repeated characters and their index
