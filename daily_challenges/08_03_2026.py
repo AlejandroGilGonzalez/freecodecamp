@@ -19,9 +19,26 @@ For example, "hsl(240, 50%, 50%)" is a valid HSL value. """
 import re
 
 def is_valid_hsl(hsl):
-    # Checks if hsl format given is wether valid or invalid.
+    # Checks if hsl format given is whether valid or invalid.
 
-    hue = re.findall(r"hsl\b\d+",hsl)
-    print(hue)
+    lista = re.search(r"hsl\(\s*(\d+),\s*(\d+)%?,\s*(\d+)%?\)",hsl)
+    if lista:
+        h,s,l = map(int, lista.groups())
 
-    return hsl
+    count = 0
+    test = False
+
+    if h > 0 and h < 360:
+        count += 1
+    if s > 0 and s < 100:
+        count += 1
+    if l > 0 and l < 100:
+        count += 1
+    if count == 3:
+        test = True
+    else:
+        test = False
+    
+    return test
+
+is_valid_hsl("hsl(300, 101%, 70%)")
