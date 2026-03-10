@@ -30,7 +30,7 @@ while x == False or count < 10:
             x = True
         if letra in s_word.values():
             layout = layout[:ind]+letra+layout[ind+1:]
-        print(layout)
+        print(layout) 
     
 
 
