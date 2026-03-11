@@ -39,6 +39,6 @@ def is_valid_hsl(hsl):
     if count == 3:
         test = True
 
-    print(test)
+    return(test)
 
 is_valid_hsl("hsl (80, 20%, 10%)")
