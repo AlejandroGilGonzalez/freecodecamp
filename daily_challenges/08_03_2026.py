@@ -22,7 +22,7 @@ def is_valid_hsl(hsl):
     # Checks if hsl format given is whether valid or invalid.
 
     
-    lista = re.search(r"hsl\(\s*(\d+)[^\d]+(\d+%?)[^\d]+(\d+%?)",hsl)
+    lista = re.search(r"hsl\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)\s*;?",hsl)
     if lista == None:
         return False
     if lista:
@@ -32,21 +32,13 @@ def is_valid_hsl(hsl):
 
     if int(h) >= 0 and int(h) <= 360:
         count +=1
-    if "%" in s:
-        s_num = re.search(r"^\d+",s)
-        if s_num:
-            s_num = int(s_num.group())
-        if s_num >= 0 and s_num <= 100:
-            count+=1
-    if "%" in l:
-        l_num = re.search(r"\d+",l)
-        if l_num:
-            l_num = int(l_num.group())
-        if l_num >= 0 and l_num <= 100:
-            count+=1
+    if int(s) >= 0 and int(s) <= 100:
+        count+=1
+    if int(l) >= 0 and int(l) <= 100:
+        count+=1
     if count == 3:
         test = True
 
-    return(test)
+    print(test)
 
 is_valid_hsl("hsl (80, 20%, 10%)")
