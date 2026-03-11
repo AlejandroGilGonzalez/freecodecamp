@@ -9,6 +9,6 @@ def sum_array(sum_array: list) -> int:
     result = sum(sum_array)
 
 
-    print(result)
+    return(result)
 
 sum_array([203, 145, -129, 6293, 523, -919, 845, 2434])
