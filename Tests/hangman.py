@@ -29,7 +29,7 @@ else:
 
 print(layout)
 
-# Search for input characters in the s_word:
+# Search for input characters in the s_word and modify the existing layout:
 intentos = 10
 win = False
 
