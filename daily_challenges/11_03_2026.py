@@ -1,4 +1,4 @@
-# Daily Challenge 11/03/2026
+# 11/03/2026 Daily Challenge
 
 # Given a string of words, return a new string where each word is replaced by its length.
 

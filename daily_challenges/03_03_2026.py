@@ -1,4 +1,4 @@
-#03/03/2026 Daily Challenge
+# 03/03/2026 Daily Challenge
 
 # Given two integers, determine how many perfect cubes exist in the range between and including the two numbers.
 
