@@ -20,7 +20,7 @@ def smallest_gap(phrase: str) -> str:
     # Searches for the gap between each repeated char and appends it to Gaps:
     gaps = []
     for r_char in repeated:
-        gap = re.findall(r_char + r"([\w*\{*\^*\**\!*\#*\&*\(*\|*\+*\-*\}*\=*]*)" + r_char,phrase)
+        gap = re.findall(r_char + r"(.*?)" + r_char,phrase)
         if gap:
             gaps.extend(gap)
     
@@ -32,4 +32,4 @@ def smallest_gap(phrase: str) -> str:
 
     return(result)
 
-smallest_gap("Hello World")
+smallest_gap("The quick brown fox jumps over the lazy dog.")

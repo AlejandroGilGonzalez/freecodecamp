@@ -18,6 +18,6 @@ def space_jam(phrase:str) -> str:
         new += char + "  "
     
     new = new[:-2]
-    
-    print(new)
+
+    return(new)
 space_jam("free Code Camp")
