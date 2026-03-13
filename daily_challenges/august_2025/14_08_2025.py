@@ -9,9 +9,15 @@ def space_jam(phrase:str) -> str:
 
     # Remove all white spaces:
 
-    new = phrase.replace(" ", "")
-    print(new)
+    phrase = phrase.replace(" ", "")
+    phrase = phrase.upper()
+
     # Insert two white spaces between every character:
-
-
+    new = ""
+    for char in phrase:
+        new += char + "  "
+    
+    new = new[:-2]
+    
+    print(new)
 space_jam("free Code Camp")
