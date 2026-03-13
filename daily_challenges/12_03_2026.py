@@ -2,7 +2,7 @@
 
 # Given a 2D array representing a sequence of dominoes, determine whether it forms a valid chain.
 
-def is_valid_domino_chain(dominoes):
+def is_valid_domino_chain(dominoes:list)-> bool:
     # Getting the second number of dominoe(i) and first number of dominoe (i+1)
 
     result = True

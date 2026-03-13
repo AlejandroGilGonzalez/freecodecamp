@@ -4,31 +4,32 @@
 Given a string, return the substring between the two identical characters
 that have the smallest number of characters between them (smallest gap)
 """
+import re
 
-def smallest_gap(input: str) -> str:
-    gap_chars = {}
+def smallest_gap(phrase: str) -> str:
 
-    # Counts the repeated characters and their index
-    for i in range(len(input)):
-        char = input[i]
-        if input[i:].count(char) > 1: gap_chars.setdefault(i,char)
-    print(gap_chars) 
+    # Gets the repeated characters in the phrase:
+    repeated = []
+
+    for char in phrase:
+        if phrase.count(char) > 1:
+            if not char in repeated: repeated.append(char)
     
-    # Finds the gaps between the repeated characters
+    print(repeated)
 
+    # Searches for the gap between each repeated char and appends it to Gaps:
     gaps = []
-    min_len = len(input)
+    for r_char in repeated:
+        gap = re.findall(r_char + r"([\w*\{*\^*\**\!*\#*\&*\(*\|*\+*\-*\}*\=*]*)" + r_char,phrase)
+        if gap:
+            gaps.extend(gap)
+    
+    print(gaps)
 
-    for pos, gap_char in gap_chars.items():
-        l_find = input.find(gap_char, pos)
-        r_find = input.find(gap_char, pos+1)    
-        gap = input[l_find+1:r_find]
-        gaps.append(gap)
-        if len(gap) < min_len: min_len = len(gap)
+    # Gets the minimum length gap and returns it as a string:
 
-    for gap in gaps:
-        if len(gap) == min_len:
-            return( gap )
-    return ""
+    result = min(gaps, key=len)
 
-smallest_gap("ABCDAC")
+    print(result)
+
+smallest_gap("The quick brown fox jumps over the lazy dog.")

@@ -18,7 +18,7 @@ For example, "hsl(240, 50%, 50%)" is a valid HSL value. """
 
 import re
 
-def is_valid_hsl(hsl):
+def is_valid_hsl(hsl:str) -> str:
     # Checks if hsl format given is whether valid or invalid.
 
     
