@@ -5,7 +5,10 @@
 
 def is_valid_number(num:str, base:int):
 
-    if [num,base]:
-        print(True)
+    try:
+        int(num,base)
+        return True
+    except:
+        return False
 
-is_valid_number("ABC", 10)
+is_valid_number("10201", 2)
