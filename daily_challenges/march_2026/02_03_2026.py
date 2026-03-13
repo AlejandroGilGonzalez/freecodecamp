@@ -8,7 +8,7 @@
     Uppercase and lowercase letters have the same value.
     Ignore all non-letter characters."""
 
-def sum_letters(s):
+def sum_letters(s:str) -> int:
     abc = "abcdefghijklmnopqrstuvwxyz"
     suma = 0
     for letter in s.lower():

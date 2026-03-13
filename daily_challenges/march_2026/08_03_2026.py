@@ -1,4 +1,4 @@
-# Daily Challenge 08/03/2026
+# 08/03/2026 Daily Challenge
 
 #Given a string, determine whether it is a valid CSS hsl() color value.
 

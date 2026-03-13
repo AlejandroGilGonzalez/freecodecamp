@@ -14,7 +14,7 @@
     Each card is represented as a string: "valueSuit". For Example: "AS" is the Ace of Spades, "10H" is the Ten of Hearts, and "QC" is the Queen of Clubs.
 """
 
-def card_values(cards):
+def card_values(cards:list) -> list:
     """
     Finds the numeric value of iterables in a list
     """

@@ -4,7 +4,7 @@
 
 # An array is flat if none of its elements are arrays.
 
-def is_flat(arr):
+def is_flat(arr:list) -> bool:
     flat = True
     for i in arr:
         if isinstance(i,list):

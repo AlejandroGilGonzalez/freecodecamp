@@ -30,6 +30,6 @@ def smallest_gap(phrase: str) -> str:
 
     result = min(gaps, key=len)
 
-    print(result)
+    return(result)
 
-smallest_gap("The quick brown fox jumps over the lazy dog.")
+smallest_gap("Hello World")
