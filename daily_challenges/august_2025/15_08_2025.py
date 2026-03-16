@@ -7,7 +7,7 @@
 - The input strings will contain no punctuation, and will be entirely lowercase.
 """
 
-def jbelmu(text):
+def jbelmu(text:str) -> str:
 
     text = text.split(" ")
     
