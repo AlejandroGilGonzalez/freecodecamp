@@ -3,7 +3,7 @@ import re
 
 # Open and convert the dictionary file into a dict:
 
-with open("dics/b.txt","r",encoding="utf-8") as f:
+with open("dics/dics.txt","r",encoding="utf-8") as f:
     dict_file = f.read()
 
 values = re.findall(r"^(\w+)",dict_file,re.MULTILINE)
