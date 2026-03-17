@@ -1,5 +1,5 @@
 import re
-from random import randint
+import random
 
 # Get the dictionary from the txt file:
 
@@ -8,6 +8,5 @@ with open("dics/dics.txt","r",encoding="utf-8") as f:
 
 # Get a random word from the dictionary:
 
-dic = dic.strip("\n")
-
-print(dic)
+s_word = random.choice(re.findall(r"[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+",dic))
+print(s_word)
