@@ -10,3 +10,5 @@ with open("dics/dics.txt","r",encoding="utf-8") as f:
 
 s_word = random.choice(re.findall(r"[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+",dic))
 print(s_word)
+
+# 
