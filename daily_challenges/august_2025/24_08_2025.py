@@ -31,13 +31,13 @@ def battle(my_army:str, opposing_army:str) -> str:
         if a in "0123456789":
             a = int(a)
         elif a in characters:
-            a = characters.index(a)
+            a = characters.index(a)+1
         else:
             a = 0
         if b in "0123456789":
             b = int(b)
         elif b in characters:
-            b = characters.index(b)
+            b = characters.index(b)+1
         else:
             b = 0
 
@@ -46,9 +46,6 @@ def battle(my_army:str, opposing_army:str) -> str:
         elif a < b:
             opp_wins+=1
 
-    print(my_wins)
-    print(opp_wins)
-    quit()
     # Define the conditions:
 
     if len(my_army) > len(opposing_army):
@@ -61,8 +58,5 @@ def battle(my_army:str, opposing_army:str) -> str:
         return "We lost"
     elif my_wins == opp_wins:
         return "It was a tie"
-
-
-    return my_army
 
 battle("pizza", "salad")
