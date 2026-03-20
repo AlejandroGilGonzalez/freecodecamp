@@ -14,7 +14,6 @@ def squares_with_three(number:int) -> int:
         if "3" in str(i**2):
             count+=1
             
-
-    print(count)
+    return (count)
 
 squares_with_three(100)
