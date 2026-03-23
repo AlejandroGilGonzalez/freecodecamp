@@ -38,5 +38,4 @@ def detect_roast(beans:str) -> str:
     else:
         return ("Dark")
 
-
 detect_roast(".--.-..-......----.'")
