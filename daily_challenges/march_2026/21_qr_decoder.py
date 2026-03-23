@@ -16,35 +16,34 @@
 # A code will always have exactly one valid orientation.
 
 """
-import re
 
 def decode_qr(qr_code:list) -> str:
 
-    # Define the correct orientation:
+    # Analizar si el codigo está en la posición correcta.q
+    while qr_code[0][0:2] != "11" or qr_code[0][4:6] != "11" or qr_code[1][0:2] != "11" or qr_code[1][4:6]!= "11" or qr_code[4][0:2]!= "11" or qr_code[5][0:2]!= "11":
 
-    new_order = []
+    # Si no es correcto, girar el codigo y volver al paso 1.
 
-    if qr_code[0][0:2] != "11" or qr_code[0][4:6] != "11":
-        qr_code = qr_code[::-1]
-        for code in qr_code:
-            new_order.append(code[::-1])
-    else:
-        new_order = qr_code
+        new_list = []
 
-    print(new_order)
+        for i in range(len(qr_code)-1,-1,-1):
+            element = ""
+            for j in range(len(qr_code[i])):
+                element += qr_code[i][j]
+            new_list.append(element)
+        qr_code = new_list
+        print(new_list)
 
-    result = []
+    # Si está correcto, sacar los orientation markers.
+    result = ""
+    result += qr_code[0][2:4]
+    result += qr_code[1][2:4]
+    result += qr_code[2]
+    result += qr_code[3]
+    result += qr_code[4][2:6]
+    result += qr_code[5][2:6]
 
-    for i, count in enumerate(new_order):
-        if i == 0 or i == 1:
-            result.append(count[2:4])
-        elif i == 4 or i == 5:
-            result.append(count[2:6])
-        else:
-            result.append(count)
-    
-    result = "".join(result)
-    print(result)
+    return(result)
 
 
 decode_qr(["111100", "110001", "100011", "001101", "110011", "110011"])
