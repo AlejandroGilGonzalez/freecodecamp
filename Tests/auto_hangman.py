@@ -36,14 +36,6 @@ for char in dic:
 
 top_chars = dict(sorted(probab.items(),key=lambda item:item[1],reverse=True))
 
-# Iterate for each word and change the word_list with the specified characters:
-
-new_list = []
-              
-# Set the layout to change while iterate:
-
-
-
 
 
 

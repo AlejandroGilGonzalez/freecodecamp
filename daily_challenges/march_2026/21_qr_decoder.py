@@ -19,20 +19,18 @@
 
 def decode_qr(qr_code:list) -> str:
 
-    # Analizar si el codigo está en la posición correcta.q
+    # Analizar si el codigo está en la posición correcta.
     while qr_code[0][0:2] != "11" or qr_code[0][4:6] != "11" or qr_code[1][0:2] != "11" or qr_code[1][4:6]!= "11" or qr_code[4][0:2]!= "11" or qr_code[5][0:2]!= "11":
 
     # Si no es correcto, girar el codigo y volver al paso 1.
-
         new_list = []
-
         for i in range(len(qr_code)-1,-1,-1):
             element = ""
             for j in range(len(qr_code[i])):
-                element += qr_code[i][j]
+                element += qr_code[j-1][j]
             new_list.append(element)
         qr_code = new_list
-        print(new_list)
+        print(qr_code)
 
     # Si está correcto, sacar los orientation markers.
     result = ""
