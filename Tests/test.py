@@ -1,5 +1,76 @@
-navigate_trail = ["-----", "--TTG", "--T--", "--T--", "CTT--"]
+def lucha (equipo_local:dict, equipo_visitante:dict):
+    
+    for jugadores in equipo_local.values():
+        for jugador, stats in jugadores.items():
+            if stats["Posición"] == equipo_visitante[jugadores][stats]["Posición"]:
+                print(yes)
 
-for i in range(len(navigate_trail)):
-    if "G" in navigate_trail[i]:
-        print("yes")
+
+partido1 = {
+    "equipo 7":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Dudu",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Juan",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Pedro",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Paco",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Lolo",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+                },
+    "equipo 8":{
+        "jugador 1":{
+            "ID":0,
+            "Nombre":"Tango",
+            "Posicion":"Delantero",
+            "Puntuación":""
+        },
+        "jugador 2":{
+            "ID":0,
+            "Nombre":"Serpi",
+            "Posicion":"Portero",
+            "Puntuación":""
+        },
+        "jugador 3":{
+            "ID":0,
+            "Nombre":"Ibai",
+            "Posicion":"Medio",
+            "Puntuación":""
+        },
+        "jugador 4":{
+            "ID":0,
+            "Nombre":"Reve",
+            "Posicion":"Defensa",
+            "Puntuación":""
+        },
+        "jugador 5":{
+            "ID":0,
+            "Nombre":"Juanma",
+            "Posicion":"Delantero",
+            "Puntuación":""
+        }
+    }
+}
+
+lucha(partido1["equipo 7"],partido1["equipo 8"])
