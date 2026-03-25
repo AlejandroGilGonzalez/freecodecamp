@@ -35,8 +35,6 @@ def navigate_trail(maped:list) -> str:
         if "C" in pos:
             c_position = [i,pos.index("C")] # Starting position
 
-    print(c_position)
-
     # Determine the total steps to make:
     total_steps = 0
 
@@ -44,8 +42,6 @@ def navigate_trail(maped:list) -> str:
         for char in level:
             if "T" in char or "G" in char:
                 total_steps += 1
-
-    print(total_steps)
 
     # Function for returning string changes:
 
@@ -63,29 +59,25 @@ def navigate_trail(maped:list) -> str:
             movements += "R"
             c_position[1] += 1
             maped = changed(maped,"C",c_position)
-            print(c_position)
-            print(maped)
+
         # Moving Left:
         elif c_position[1]-1 >= 0 and ("T" in maped[c_position[0]][c_position[1]-1] or "G" in maped[c_position[0]][c_position[1]-1]):
             movements += "L"
             c_position[1] -= 1
             maped = changed(maped,"C",c_position)
-            print(c_position)
-            print(maped)
+
         # Moving Upwards:
         elif c_position[0]-1 >= 0 and ("T" in maped[c_position[0]-1][c_position[1]] or "G" in maped[c_position[0]-1][c_position[1]]):
             movements += "U"
             c_position[0] -= 1
             maped = changed(maped,"C",c_position)
-            print(c_position)
-            print(maped)
+
         # Moving Downwards:
         elif "T" in maped[c_position[0]+1][c_position[1]] or "G" in maped[c_position[0]+1][c_position[1]]:
             movements += "D"
             c_position[0] += 1
             maped = changed(maped,"C",c_position)
-            print(c_position)
-            print(maped)
+
 
     return(movements)
 
