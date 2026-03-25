@@ -27,24 +27,66 @@ Each trail location will have a maximum of two traversable locations touching it
 
 """
 
-def navigate_trail(map:list) -> str:
+def navigate_trail(maped:list) -> str:
 
-    # Get our Current Position:
+    # Get the starting position:
 
-    c_position = map[0].index("C")
+    for i, pos in enumerate(maped):
+        if "C" in pos:
+            c_position = [i,pos.index("C")] # Starting position
 
-    # Get the movements:
+    print(c_position)
+
+    # Determine the total steps to make:
+    total_steps = 0
+
+    for level in maped:
+        for char in level:
+            if "T" in char or "G" in char:
+                total_steps += 1
+
+    print(total_steps)
+
+    # Function for returning string changes:
+
+    def changed (phrase:list, ce:str, position:list) -> str:
+        phrase[position[0]] = phrase[position[0]][:position[1]] + ce + phrase[position[0]][position[1]+1:]
+        return phrase
+
     
     movements = ""
 
-    new_map = []
+    # Determine the steps:
+    for i in range(total_steps):
+        # Moving Right:
+        if "T" in maped[c_position[0]][c_position[1]+1] or "G" in maped[c_position[0]][c_position[1]+1]:
+            movements += "R"
+            c_position[1] += 1
+            maped = changed(maped,"C",c_position)
+            print(c_position)
+            print(maped)
+        # Moving Left:
+        elif c_position[1]-1 >= 0 and ("T" in maped[c_position[0]][c_position[1]-1] or "G" in maped[c_position[0]][c_position[1]-1]):
+            movements += "L"
+            c_position[1] -= 1
+            maped = changed(maped,"C",c_position)
+            print(c_position)
+            print(maped)
+        # Moving Upwards:
+        elif c_position[0]-1 >= 0 and ("T" in maped[c_position[0]-1][c_position[1]] or "G" in maped[c_position[0]-1][c_position[1]]):
+            movements += "U"
+            c_position[0] -= 1
+            maped = changed(maped,"C",c_position)
+            print(c_position)
+            print(maped)
+        # Moving Downwards:
+        elif "T" in maped[c_position[0]+1][c_position[1]] or "G" in maped[c_position[0]+1][c_position[1]]:
+            movements += "D"
+            c_position[0] += 1
+            maped = changed(maped,"C",c_position)
+            print(c_position)
+            print(maped)
 
-    # Determine the next step direction:
-    
-    if c_position+1 == "T":
-        c_position = c_position+1
-        
+    return(movements)
 
-    print(movements)
-
-navigate_trail(["-CT--", "--T--", "--TT-", "---T-", "---G-"])
+navigate_trail(["TTTTTTT-", "T-----T-", "T-----T-", "TTTT--TG", "---C----"])
