@@ -24,13 +24,12 @@ def decode_qr(qr_code:list) -> str:
 
     # Si no es correcto, girar el codigo y volver al paso 1.
         new_list = []
-        for i in range(len(qr_code)-1,-1,-1):
+        for x in range(len(qr_code)):
             element = ""
-            for j in range(len(qr_code[i])):
-                element += qr_code[j-1][j]
+            for i in range(len(qr_code)-1,-1,-1):
+                element += qr_code[i][x]
             new_list.append(element)
         qr_code = new_list
-        print(qr_code)
 
     # Si está correcto, sacar los orientation markers.
     result = ""
