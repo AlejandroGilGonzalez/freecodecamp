@@ -9,9 +9,13 @@ def rotate(matrix:list) -> list:
 
     new_matrix = []
 
+    # Get the index sequence ([1][0],[0][0]) , ([1][1],[0][1])
+
     for i in range(len(matrix)-1,-1,-1):
-        for j in range(len(matrix[i])-1):
-            new_matrix.append([matrix[i][j],matrix[i][i]])
+        element = []
+        for j in range(len(matrix[i])):
+            element.append(matrix[i][j])
+        new_matrix.append(element)
     print(new_matrix)
 
 rotate([[1, 2], [3, 4]])

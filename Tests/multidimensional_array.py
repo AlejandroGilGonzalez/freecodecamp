@@ -271,19 +271,26 @@ copa_america = {
     } 
 }
 
-ide = 1
+# Definir el ID y la puntuación de cada jugador:
 
+ide = 1
 for partido, equipos in copa_america["fase_grupos"].items():
     for equipo, jugadores in equipos.items():
         for jugador, stats in jugadores.items():
             stats["ID"] = ide
             ide += 1
-        for jugador, stats in jugadores.items():
-            points = randint(50,99)
-            stats["Puntuación"] = points
+            stats["Puntuación"] = randint(50,99)
             print(stats)
-        
 
+# Definir una función que compare las distintas puntuaciones por clase de jugador:        
 
+def lucha (equipo_local:dict, equipo_visitante:dict):
+    
+    for jugadores in equipo_local.values():
+        for jugador, stats in jugadores.items():
+            if stats["Posición"] == equipo_visitante[jugadores][stats]["Posición"]:
+                print(yes)
+
+    return ""
 
 

@@ -48,6 +48,3 @@ def main():
         print(f"error raised:{e}")
 
 
- 
- class platano:
-        def __init__.(self,tipo,)
