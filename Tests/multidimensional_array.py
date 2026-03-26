@@ -278,7 +278,6 @@ for partido, equipos in copa_america["fase_grupos"].items():
         for jugador, stats in jugadores.items():
             stats["ID"] = ide
             ide += 1
-            continue
         for jugador, stats in jugadores.items():
             points = randint(50,99)
             stats["Puntuación"] = points

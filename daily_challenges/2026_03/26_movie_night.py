@@ -51,6 +51,6 @@ def get_movie_night_cost(day:str, showtime:str, number_of_tickets:int) -> str:
         cost = 5 * number_of_tickets
         result = f"${cost}.00"
 
-    return(result)
+    print(result)
 
-get_movie_night_cost("Friday", "4:30pm", 5)
+get_movie_night_cost("Monday", "4:30am", 1)
