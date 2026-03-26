@@ -10,11 +10,8 @@ def rotate(matrix:list) -> list:
     new_matrix = []
 
     for i in range(len(matrix)-1,-1,-1):
-        element = []
-        for j in range(len(matrix[i])):
-            element.append([matrix[i][j]])
-        new_matrix.append(element)
-
+        for j in range(len(matrix[i])-1):
+            new_matrix.append([matrix[i][j],matrix[i][i]])
     print(new_matrix)
 
 rotate([[1, 2], [3, 4]])

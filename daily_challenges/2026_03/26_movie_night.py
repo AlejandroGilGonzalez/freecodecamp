@@ -14,6 +14,7 @@ Matinee (before 5:00pm): subtract $2.00 per ticket (except on Tuesdays).
 Tuesdays: all tickets are $5.00 each.
 
 """
+from datetime import datetime
 
 def get_movie_night_cost(day:str, showtime:str, number_of_tickets:int) -> str:
 
@@ -23,34 +24,30 @@ def get_movie_night_cost(day:str, showtime:str, number_of_tickets:int) -> str:
     weekend = ["Friday","Saturday","Sunday"]
 
     # Define if showtime is on matinee or not:
-
-    matinee = False
-    showtime = showtime.split(":")
     
-    if int(showtime[0]) >= 5 and "am" in showtime[1]:
-        matinee = True
-    elif int(showtime[0]) < 5 and "pm" in showtime[1]:
-        matinee = True
+    cost = 0
+
+    showtime = datetime.strptime(showtime,"%I:%M%p")
+
+    if showtime < datetime.strptime("05:00pm","%I:%M%p"):
+        if day != "Tuesday":
+            cost -= 2 * number_of_tickets
 
     # Return the total cost if weekends:
 
     if day in weekend:
-        cost = 12 * number_of_tickets
-        if matinee:
-            cost -= 2 * number_of_tickets
+        cost += 12 * number_of_tickets
         result = (f"${cost}.00")
 
     # Return the total cost if weekday:
 
     if day in weekdays and day != "Tuesday":
-        cost = 10 * number_of_tickets
-        if matinee:
-            cost -= 2 * number_of_tickets
+        cost += 10 * number_of_tickets
         result = f"${cost}.00"
     elif day == "Tuesday":
-        cost = 5 * number_of_tickets
+        cost += 5 * number_of_tickets
         result = f"${cost}.00"
 
     return(result)
 
-get_movie_night_cost("Monday", "4:30am", 1)
+get_movie_night_cost("Sunday", "10:00am", 1)
