@@ -1,9 +1,13 @@
 def lucha (equipo_local:dict, equipo_visitante:dict):
+ 
+    for player,jugadores in equipo_local.items():
+        jugadores = jugadores
+    for player2, jugadores2 in equipo_visitante.items():
+        jugadores2 = jugadores2
     
-    for jugadores in equipo_local.values():
-        for jugador, stats in jugadores.items():
-            if stats["Posición"] == equipo_visitante[jugadores][stats]["Posición"]:
-                print(yes)
+    for player in equipo_local: 
+        if jugadores["Posicion"] == "Delantero":
+            print("yes")
 
 
 partido1 = {
