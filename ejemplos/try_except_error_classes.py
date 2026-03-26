@@ -47,5 +47,7 @@ def main():
     except (InsufficientAge,TooAge) as e:
         print(f"error raised:{e}")
 
-# main()
-# print (f"age = {age}")
+
+ 
+ class platano:
+        def __init__.(self,tipo,)
