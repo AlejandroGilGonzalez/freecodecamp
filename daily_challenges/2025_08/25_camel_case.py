@@ -18,24 +18,28 @@ def to_camel_case(phrase:str) -> str:
 
     # Replace the word breakers:
 
-    text = phrase.replace("-","")
-    text = text.replace("_","")
+    text = phrase.replace("-"," ")
+    text = text.replace("_"," ")
 
     # Split the string into a list:
 
     camelcase = text.split()
 
-    # Create a new list with the CamelCase 
+    # Lowercase the first word: 
     
-    for word in split_text:
-        if word == split_text[0]:
-            word = word.upper()
-            camelcase.append(word)                           
+    camelcase[0] = camelcase[0].lower()
 
-        camel = word[0].upper() + word[1:]
-        camelcase.append(camel)        
     print(camelcase)
 
-    return ""
+    # Capitalize the following words:
 
-to_camel_case("hello world")
+    for i in range(1,len(camelcase[1:])+1):
+        camelcase[i] = camelcase[i].capitalize()
+    
+    # Unite the words in one string with Join:
+
+    result = "".join(camelcase)
+    
+    return (result)
+
+to_camel_case("secret agent-X")
