@@ -27,38 +27,71 @@ including the three periods, is as close as possible to 60 units without going o
 
 def truncate_text(phrase:str) -> str:
 
-    # Stablish the total permited witdh and the starting width as 0:
+    # Stablish the starting width as 0 and each width in format list:
     
-    total_width = 50
     start_width = 0
 
-    # Search for the different width parameters:
+    one = list("ilI" + ".")
+    two = list("fjrt" + " ")
+    three = list("abcdeghkmnopqrstuvwxyzJL")
+    four = list("ABCDEFGHKMNOPQRSTUVWXYZ")
+
+    # Sum the different width parameters and creates a new string:
 
     new_string = ""
 
     for char in phrase:
-        if char in "ilI" or (char in "."):
-            #if start_width + 1 < 50:
-            start_width += 1
-            new_string += char
-
-        elif char in "fjrt" or (char in " "):
-            # if start_width + 2 < 50:
-            start_width += 2
-            new_string += char
-
-        elif char in "abcdeghkmnopqrstuvwxyzJL":
-            #if start_width + 3 < 50:
-            start_width += 3
-            new_string += char
-
-        elif char in "ABCDEFGHKMNOPQRSTUVWXYZ":
-            # if start_width + 4 < 50:
-            start_width += 4
-            new_string += char
-
         
-    print (start_width)
-    print (new_string)
+        # When characters should sum 1:
 
-truncate_text("The silky smooth sloth")
+        if char in one:
+            if start_width + 1 <= 50:
+                start_width += 1
+                new_string += char
+            else:
+                break
+
+        # When characters should sum 2:
+
+        elif char in two:
+            if start_width + 2 <= 50:
+                start_width += 2
+                new_string += char
+            else:
+                break
+
+        # When characters should sum 3:
+
+        elif char in three:
+            if start_width + 3 <= 50:
+                start_width += 3
+                new_string += char
+            else:
+                break
+
+        # When characters should sum 4:
+
+        elif char in four:
+            if start_width + 4 <= 50:
+                start_width += 4
+                new_string += char
+            else:
+                break
+
+    # Determines if the string should return equal or modified:
+
+    print(new_string)
+
+    if new_string == phrase: # When the string is equal returns the same.
+        return new_string
+    else:
+        if start_width + 3 <= 50: # When the new string can have three dots.
+            new_string = new_string + "..."
+        else: # When we need to remove the last character:                 
+            new_string = new_string[:-1] + "..."
+
+    
+    print(start_width)
+    return(new_string)
+
+truncate_text("THE LOUD BRIGHT BIRD")
