@@ -15,8 +15,7 @@ for partido, equipos in copas["copa_america"]["fase_grupos"].items():
             stats["Puntuación"] = randint(50,99)
             json.dump(copas, open("players_array.json", "w", encoding="utf8"))
             print(jugador,stats)
-
-   
+ 
 
 # Definir una función que compare las distintas puntuaciones por clase de jugador:        
 

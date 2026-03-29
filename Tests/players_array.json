@@ -1,1 +1,270 @@
-{"copa_america": {"fase_grupos": {"partido 1": {"equipo 1": {"jugador 1": {"ID": 0, "Nombre": "Julio", "Posicion": "Delantero", "Puntuaci\u00f3n": 55}, "jugador 2": {"ID": 0, "Nombre": "Oscar", "Posicion": "Portero", "Puntuaci\u00f3n": 83}, "jugador 3": {"ID": 0, "Nombre": "Angel", "Posicion": "Medio", "Puntuaci\u00f3n": 78}, "jugador 4": {"ID": 0, "Nombre": "Alex", "Posicion": "Defensa", "Puntuaci\u00f3n": 62}, "jugador 5": {"ID": 0, "Nombre": "Gabriel", "Posicion": "Delantero", "Puntuaci\u00f3n": 97}}, "equipo 2": {"jugador 1": {"ID": 0, "Nombre": "Ana", "Posicion": "Delantero", "Puntuaci\u00f3n": 78}, "jugador 2": {"ID": 0, "Nombre": "Olga", "Posicion": "Portero", "Puntuaci\u00f3n": 82}, "jugador 3": {"ID": 0, "Nombre": "Celia", "Posicion": "Medio", "Puntuaci\u00f3n": 70}, "jugador 4": {"ID": 0, "Nombre": "Lucia", "Posicion": "Defensa", "Puntuaci\u00f3n": 72}, "jugador 5": {"ID": 0, "Nombre": "Sofia", "Posicion": "Delantero", "Puntuaci\u00f3n": 51}}}, "partido 2": {"equipo 3": {"jugador 1": {"ID": 0, "Nombre": "Damian", "Posicion": "Delantero", "Puntuaci\u00f3n": 50}, "jugador 2": {"ID": 0, "Nombre": "Masco", "Posicion": "Portero", "Puntuaci\u00f3n": 53}, "jugador 3": {"ID": 0, "Nombre": "Arnau", "Posicion": "Medio", "Puntuaci\u00f3n": 86}, "jugador 4": {"ID": 0, "Nombre": "Lucian", "Posicion": "Defensa", "Puntuaci\u00f3n": 73}, "jugador 5": {"ID": 0, "Nombre": "Gervo", "Posicion": "Delantero", "Puntuaci\u00f3n": 54}}, "equipo 4": {"jugador 1": {"ID": 0, "Nombre": "Dione", "Posicion": "Delantero", "Puntuaci\u00f3n": 61}, "jugador 2": {"ID": 0, "Nombre": "Mike", "Posicion": "Portero", "Puntuaci\u00f3n": 78}, "jugador 3": {"ID": 0, "Nombre": "Jose", "Posicion": "Medio", "Puntuaci\u00f3n": 89}, "jugador 4": {"ID": 0, "Nombre": "Santa", "Posicion": "Defensa", "Puntuaci\u00f3n": 69}, "jugador 5": {"ID": 0, "Nombre": "Loco", "Posicion": "Delantero", "Puntuaci\u00f3n": 76}}}, "partido 3": {"equipo 5": {"jugador 1": {"ID": 0, "Nombre": "Pesca", "Posicion": "Delantero", "Puntuaci\u00f3n": 80}, "jugador 2": {"ID": 0, "Nombre": "Logra", "Posicion": "Portero", "Puntuaci\u00f3n": 67}, "jugador 3": {"ID": 0, "Nombre": "Rubio", "Posicion": "Medio", "Puntuaci\u00f3n": 75}, "jugador 4": {"ID": 0, "Nombre": "Gonza", "Posicion": "Defensa", "Puntuaci\u00f3n": 54}, "jugador 5": {"ID": 0, "Nombre": "Martin", "Posicion": "Delantero", "Puntuaci\u00f3n": 86}}, "equipo 6": {"jugador 1": {"ID": 0, "Nombre": "Yeri", "Posicion": "Delantero", "Puntuaci\u00f3n": 92}, "jugador 2": {"ID": 0, "Nombre": "Ivan", "Posicion": "Portero", "Puntuaci\u00f3n": 96}, "jugador 3": {"ID": 0, "Nombre": "Ricar", "Posicion": "Medio", "Puntuaci\u00f3n": 99}, "jugador 4": {"ID": 0, "Nombre": "Sabo", "Posicion": "Defensa", "Puntuaci\u00f3n": 53}, "jugador 5": {"ID": 0, "Nombre": "Clara", "Posicion": "Delantero", "Puntuaci\u00f3n": 83}}}, "partido 4": {"equipo 7": {"jugador 1": {"ID": 0, "Nombre": "Dudu", "Posicion": "Delantero", "Puntuaci\u00f3n": 61}, "jugador 2": {"ID": 0, "Nombre": "Juan", "Posicion": "Portero", "Puntuaci\u00f3n": 58}, "jugador 3": {"ID": 0, "Nombre": "Pedro", "Posicion": "Medio", "Puntuaci\u00f3n": 56}, "jugador 4": {"ID": 0, "Nombre": "Paco", "Posicion": "Defensa", "Puntuaci\u00f3n": 90}, "jugador 5": {"ID": 0, "Nombre": "Lolo", "Posicion": "Delantero", "Puntuaci\u00f3n": 84}}, "equipo 8": {"jugador 1": {"ID": 0, "Nombre": "Tango", "Posicion": "Delantero", "Puntuaci\u00f3n": 77}, "jugador 2": {"ID": 0, "Nombre": "Serpi", "Posicion": "Portero", "Puntuaci\u00f3n": 87}, "jugador 3": {"ID": 0, "Nombre": "Ibai", "Posicion": "Medio", "Puntuaci\u00f3n": 59}, "jugador 4": {"ID": 0, "Nombre": "Reve", "Posicion": "Defensa", "Puntuaci\u00f3n": 67}, "jugador 5": {"ID": 0, "Nombre": "Juanma", "Posicion": "Delantero", "Puntuaci\u00f3n": 66}}}}}}
+{ 
+    "copa_america":{
+    "fase_grupos":{
+        "partido 1":{
+            "equipo 1":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Julio",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Oscar",
+                    "Posicion":"Portero",
+                    "Puntuación":""                    
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Angel",
+                    "Posicion":"Medio",
+                    "Puntuación":""                    
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Alex",
+                    "Posicion":"Defensa",
+                    "Puntuación":""                    
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Gabriel",
+                    "Posicion":"Delantero",
+                    "Puntuación":""                    
+                }
+            },
+            "equipo 2":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Ana",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Olga",
+                    "Posicion":"Portero",
+                    "Puntuación":""                    
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Celia",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Lucia",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Sofia",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            }
+        },
+        "partido 2":{
+            "equipo 3":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Damian",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Masco",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Arnau",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Lucian",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Gervo",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            },
+            "equipo 4":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Dione",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Mike",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Jose",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Santa",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Loco",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            }
+        },
+        "partido 3":{
+            "equipo 5":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Pesca",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Logra",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Rubio",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Gonza",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Martin",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            },
+            "equipo 6":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Yeri",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Ivan",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Ricar",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Sabo",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Clara",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            }
+        },
+        "partido 4":{
+            "equipo 7":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Dudu",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Juan",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Pedro",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Paco",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Lolo",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            },
+            "equipo 8":{
+                "jugador 1":{
+                    "ID":0,
+                    "Nombre":"Tango",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                },
+                "jugador 2":{
+                    "ID":0,
+                    "Nombre":"Serpi",
+                    "Posicion":"Portero",
+                    "Puntuación":""
+                },
+                "jugador 3":{
+                    "ID":0,
+                    "Nombre":"Ibai",
+                    "Posicion":"Medio",
+                    "Puntuación":""
+                },
+                "jugador 4":{
+                    "ID":0,
+                    "Nombre":"Reve",
+                    "Posicion":"Defensa",
+                    "Puntuación":""
+                },
+                "jugador 5":{
+                    "ID":0,
+                    "Nombre":"Juanma",
+                    "Posicion":"Delantero",
+                    "Puntuación":""
+                }
+            }
+        }
+    } 
+}
+}
