@@ -19,9 +19,7 @@ def get_due_date(date_str:str) -> str:
     month_30 = [4,6,9,11]
     month_31 = [1,3,5,7,8,10,12]
 
-    # Sum the 9 months in the different posibilities: 
-
-    
+    # Sum the 9 months in the different posibilities:  
 
     if start_date.month + 9 > 12: # When the sum gets you to the next year:
         year = start_date.year + 1 # Sums one year.
