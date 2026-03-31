@@ -24,16 +24,10 @@ def alarm_check(alarm_time:str, wake_time:str) -> str:
     alarm_time = datetime.strptime(alarm_time, "%H:%M")
     wake_time = datetime.strptime(wake_time,"%H:%M")
 
-    # Convert the time objects to time delta:
-
-    new_alarm_time = timedelta(hours= alarm_time.hour, minutes = alarm_time.minute)
-    new_wake_time = timedelta(hours= wake_time.hour, minutes = wake_time.minute)
-
     # Get the total minutes difference, in positive or negative integer:
 
-    minutes_diff = int((new_wake_time.total_seconds() - new_alarm_time.total_seconds()) / 60)
-    
-    print (minutes_diff)
+    diff = wake_time - alarm_time
+    minutes_diff = diff.total_seconds()/60
 
     # Return 'early' if wake time is before alarm time so minutes are negative:
 
