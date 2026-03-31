@@ -19,6 +19,24 @@ import re
 
 def decode(phrase:str) -> str:
 
-    # With regex we search for the characters inside parenthesis:
+    while "(" in phrase:
 
-   
+        # With regex we search for the characters inside parenthesis:
+
+        element = re.search(r"\(([^()]+)\)",phrase)
+
+        # All groups need to be reversed and replaced in the string:
+
+        for i in range(1,len(element.groups()) + 1):
+        
+            # Reverting the group taken
+            
+            reversed_element = element.group(i)[::-1]
+
+            # Replacing the reversed element in the given string:
+
+            phrase = phrase.replace(f"({element.group(i)})", reversed_element)
+    
+    return (phrase)
+
+decode("((is?)(a(t d)h)e(n y( uo)r)aC)")
