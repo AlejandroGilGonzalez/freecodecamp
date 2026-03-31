@@ -15,37 +15,26 @@ Assume all parentheses are evenly balanced and correctly nested.
 
 """
 
+import re
+
 def decode(phrase:str) -> str:
 
-    # Gets the index of every parenthesis:
+    # Define the number of loops:
 
-    parenthesis = []
+    loops = phrase.count("(")
 
-    for i, char in enumerate(phrase):
-        if char in "()":
-            parenthesis.append(i)        
+    # With regex we search for the characters inside parenthesis:
+
+    elements_list = []
+
+    for i in range(loops):
+        element = re.search(r"(\(\w+\))",phrase) # Searches for inner parenthesis match ()
+        element2 = element.group(1).replace("(","")
+        element2 = element.group(1).replace(")","")
+        phrase = phrase.replace(element2,element2[::-1]) # Substracting the group we don't need anymore
+        
     
-    print (parenthesis)
+    print(phrase)
 
-    
-    # Gets the parenthesis correlation:
-
-    first = 0
-    last = -1
-    correlation = []
-
-    for i in range(len(parenthesis)//2):
-        new = [parenthesis[first],parenthesis[last]]
-        correlation.append(new)
-        first +=1
-        last -=1
-
-    print(correlation)
-
-    # Gets the words in between the parenthesis:
-
-    new_phrase = ""
-
-    for i in range
-    
+        
 decode("(f(b(dc)e)a)")

@@ -1,16 +1,17 @@
-from datetime import datetime
-import calendar
+import re
 
-def get_due_date(date_str:str) -> str:
+def decode(phrase:str) -> str:
 
-    start_date = datetime.strptime(date_str, "%Y-%m-%d")
-
-    year = start_date.year + (start_date.month + 9 - 1 ) // 12
-    month = (start_date.month + 9 - 1 ) % 12 + 1
-    day = min(start_date.day, calendar.monthrange(year,month)[1])
-
-    new_date = start_date.replace(year=year, month=month, day=day)
+    # With regex we search for the characters inside parenthesis:
     
-    new_date = datetime.strftime(new_date,"%Y-%m-%d")
+    elements_list = ""
 
-    return (new_date)
+    for i in range(phrase.count("(")):
+        element = re.search(r"(\(\w+\))",phrase)
+        phrase = phrase.replace(element.group(1),"")
+        element = element.group(1)[::-1]
+        
+        print(element)
+        
+    
+decode("(f(b(dc)e)a)")
