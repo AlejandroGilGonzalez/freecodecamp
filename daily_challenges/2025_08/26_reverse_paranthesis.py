@@ -1,4 +1,4 @@
-# 26/08/2025 Daily Challenge
+# 26/08/2025 Daily Challenge.
 
 # Given a string that contains properly nested parentheses,
 # return the decoded version of the string using the following rules:
