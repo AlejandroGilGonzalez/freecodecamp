@@ -19,27 +19,16 @@ def fix_prank_number(array:list) -> list:
     results = []
 
     # Try to substract the numbers and get a patterned result:
-    #
-    # If pattern number is negative the pattern is decreasing
-    #
-    # Otherwise it is increasing:
 
-    for i in range(len(array)):
-        try:
-            sub = array[i+1] - array[i]
-        except:
-            break
+    for i in range(len(array)-1):
+        sub = array[i+1] - array[i]
         results.append(sub)
-
-    print(results)
 
     # The only result that repeats is the difference:
 
     for result in results:
         if results.count(result) >= 2:
             patt_number = result
-
-    print(patt_number)
 
     # If pattern number is positive, the pattern increases, otherwise decreases:
 
@@ -72,6 +61,8 @@ def fix_prank_number(array:list) -> list:
                 new_number = new_pattern[i] - patt_number
                 new_pattern.append(new_number)
             new_pattern.reverse()
+
+    # When the pattern decreases:
 
     elif increase == False:
 
