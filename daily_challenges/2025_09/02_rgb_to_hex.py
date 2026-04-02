@@ -20,6 +20,4 @@ def rgb_to_hex(rgb:str) -> str:
 
     return (f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}")
 
-
-
 rgb_to_hex("rgb(255, 255, 255)")
