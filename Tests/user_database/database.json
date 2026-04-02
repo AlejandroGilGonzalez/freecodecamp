@@ -1,0 +1,20 @@
+{
+    "users": {
+        "user1": {
+            "user1_id": "test",
+            "user1_password": "test"
+        },
+        "user2": {
+            "user2_id": "IrDa",
+            "user2_password": "202cb962ac59075b964b07152d234b70"
+        },
+        "user3": {
+            "user3_id": "AciberarCoulis",
+            "user3_password": "58a2fc6ed39fd083f55d4182bf88826d"
+        },
+        "user4": {
+            "user4_id": "Alex",
+            "user4_password": "202cb962ac59075b964b07152d234b70"
+        }
+    }
+}
