@@ -15,8 +15,12 @@ def rgb_to_hex(rgb:str) -> str:
     rgb_list = re.findall(r"(\d+)", rgb)
     rgb = rgb_list
 
+    # Convert each number to integer:
+
     for i in range(len(rgb)):
         rgb[i] = int(rgb[i])
+    
+    # Return a string with each number formated as hexadecimal:
 
     return (f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}")
 
