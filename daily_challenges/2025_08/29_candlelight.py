@@ -41,8 +41,6 @@ def burn_candles(candles:int, leftovers_needed:int) -> int:
         candles = left_overs // leftovers_needed
         left_overs = left_overs % leftovers_needed
 
-    print(total_burnt)
-
-    return ""
+    return (total_burnt)
 
 burn_candles(2345, 3)
