@@ -26,7 +26,7 @@ class user:
 def main() -> int:
     user_1 = user("admin", "1234")
 
-    print("usuario creado", user_1.username, user_1.password)
+    #print("usuario creado", user_1.username, user_1.password)
 
     logged = user_1.login("admin", "1234")
     print(logged)
