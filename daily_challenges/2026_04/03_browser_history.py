@@ -21,27 +21,29 @@ def get_browser_history(commands:list) -> list:
 
     history = []
 
-    # Control the path
+    
+    for i in range (len(commands)):
+        
+        # Adding URLs:
 
-    path = []
-
-    # Stablish the position:
-
-    position = 0
-
-    for i in range(len(commands)):
         if "." in commands[i]:
-            history.append(commands[i])
-            print(history)
-        # Adds or substract from the counter depending if back or forward
+            url = commands[i]
+            history.append(url)
 
-        if "Back" in commands[i]:
-            path = history[:i-1]
-            print(history)
+        # Moving back to the previous URL:
 
-        elif "Forward" in commands[i]:
-            path = history[:i+1]
-            print(history)
+        elif "Back" in commands[i]:
+
+            # If previous URL is
+
+            history
+
+        # When adding a web page we discard any forward history:
+
+        if url in history:
+            
+
+
 
     result = [history,position]
 
