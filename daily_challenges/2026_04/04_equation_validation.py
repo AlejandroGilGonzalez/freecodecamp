@@ -19,63 +19,24 @@ def is_valid_equation(equation:str) -> bool:
 
     # Search for the numbers in the equation and convert them to integers:
 
-    numbers = re.findall(r"(\d+)(?=.*=)", equation)
-
-    for i in range(len(numbers)):
-        numbers[i] = int(numbers[i])
+    numbers = re.search(r"(.+)(?=.*=)", equation)
     
+    eq = numbers.group(1)
 
     # Search for the result in the equation:
 
     total = re.search(r"(?<=\=\s)(\d+)", equation)
     total = int(total.group(1))
 
-    # Search for the operators in the equation:
+    # Evaluate multiplication and division:
 
-    operators = re.findall(r"([\+\/\-\*])", equation)
-
-    # Evaluate multiplication:
-
-    for i in range(len(operators)):
-        if "*" in operators:
-            position = operators.index("*") # Gets the operator index
-            result = numbers[position] * numbers[position+1] # Does the operation with the same index number and the next one.
-            numbers[position] = result # Converts the number to the result
-            numbers.remove(numbers[position+1]) # Removes the number we don't need anymore
-            operators.remove(operators[position])
-
-    # Evaluate division:
-
-        elif "/" in operators:
-            position = operators.index("/")
-            result = numbers[position] / numbers[position+1]
-            numbers[position] = result
-            numbers.remove(numbers[position+1])
-            operators.remove(operators[position])
-
-    # Evaluate last sum:
-        
-        elif "+" in operators:
-            position = operators.index("+")
-            result = numbers[position] + numbers[position+1]
-            numbers[position] = result
-            numbers.remove(numbers[position+1])
-            operators.remove(operators[position])
-    
-    # Evaluate substraction:
-
-        elif "-" in operators:
-            position = operators.index("-")
-            result = numbers[position] - numbers[position+1]
-            numbers[position] = result
-            numbers.remove(numbers[position+1])
-            operators.remove(operators[position])
-
+    eq_result = eval(eq)
+  
     # Evaluate if total of the equation is equal to result:
-    
-    if int(numbers[0]) == total:
+
+    if eq_result == total:
         return True
     else:
         return False
 
-is_valid_equation("5 + 2 + 3 = 10")
+is_valid_equation("10 - 6 / 2 + 8 * 3 = 31")
