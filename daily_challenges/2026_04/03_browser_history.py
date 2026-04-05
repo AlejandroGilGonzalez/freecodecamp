@@ -21,6 +21,9 @@ def get_browser_history(commands:list) -> list:
 
     history = []
 
+    # Add an index:
+
+    index = 0
     
     for i in range (len(commands)):
         
@@ -29,23 +32,20 @@ def get_browser_history(commands:list) -> list:
         if "." in commands[i]:
             url = commands[i]
             history.append(url)
+            index += 1
 
         # Moving back to the previous URL:
 
         elif "Back" in commands[i]:
-
-            # If previous URL is
-
-            history
+            index -= 1
+            history = history[:history.index(commands[i-1])]
 
         # When adding a web page we discard any forward history:
 
-        if url in history:
+        elif "Forward" in commands[i]:
+            index +=1
             
-
-
-
-    result = [history,position]
+    print(index)
 
 
 get_browser_history(["example.com", "example.com/about", "Back", "example.com/contact", "example.com/blog", "Back", "Back", "Forward"])
