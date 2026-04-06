@@ -31,14 +31,10 @@ def get_words(paragraph:str) -> list:
 
     for word in word_set:
         frequence.append([word, words.count(word)])
-
-    print(frequence)
         
     # Sort words by appearance:
 
     frequence = sorted(frequence, key= lambda x: (-x[1], words.index(x[0])))
-
-    print(frequence)
   
     # Return the repeated words in descending order by how many times they appear:
 
