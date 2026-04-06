@@ -1,3 +1,6 @@
-rgb = (255,255,255)
+from datetime import datetime
 
-print(f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}")
+
+fecha = datetime.strptime("05-04-2025", "%d-%m-%Y")
+
+print(fecha)
