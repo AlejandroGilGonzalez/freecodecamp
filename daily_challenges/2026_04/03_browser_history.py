@@ -23,7 +23,7 @@ def get_browser_history(commands:list) -> list:
 
     # Add an index:
 
-    index = 0
+    index = -1
     
     for i in range (len(commands)):
         
@@ -32,16 +32,12 @@ def get_browser_history(commands:list) -> list:
         if "." in commands[i]:
             url = commands[i]
             
-            if i == 0:
-                history.append(url)
-                index = history.index(url)
+            if index != len(history) -1:
+                index += 1
+                history[index] = url
             else:
-                try:
-                    history[index + 1] = url
-                    index = history.index(url)
-                except:
-                    history.append(url)
-                    index = history.index(url)
+                history.append(url)
+                index += 1
                 
         # Moving back to the previous URL:
 
@@ -55,7 +51,7 @@ def get_browser_history(commands:list) -> list:
             if index < len(history)-1:
                 index +=1
             
-    return [history,index]
+    return([history,index])
 
 
-get_browser_history(["example.com", "example.com/about", "Back", "Back"])
+get_browser_history(["example.com", "example.com/about", "Back", "example.com/contact", "example.com/blog", "Back", "Back", "Forward"])
