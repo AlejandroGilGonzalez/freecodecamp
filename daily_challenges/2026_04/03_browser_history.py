@@ -31,21 +31,31 @@ def get_browser_history(commands:list) -> list:
 
         if "." in commands[i]:
             url = commands[i]
-            history.append(url)
-            index += 1
-
+            
+            if i == 0:
+                history.append(url)
+                index = history.index(url)
+            else:
+                try:
+                    history[index + 1] = url
+                    index = history.index(url)
+                except:
+                    history.append(url)
+                    index = history.index(url)
+                
         # Moving back to the previous URL:
 
         elif "Back" in commands[i]:
-            index -= 1
-            history = history[:history.index(commands[i-1])]
+            if index > 0:
+                index -= 1
 
         # When adding a web page we discard any forward history:
 
         elif "Forward" in commands[i]:
-            index +=1
+            if index < len(history)-1:
+                index +=1
             
-    print(index)
+    return [history,index]
 
 
-get_browser_history(["example.com", "example.com/about", "Back", "example.com/contact", "example.com/blog", "Back", "Back", "Forward"])
+get_browser_history(["example.com", "example.com/about", "Back", "Back"])
