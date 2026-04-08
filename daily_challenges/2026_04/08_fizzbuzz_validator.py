@@ -40,12 +40,17 @@ def is_fizz_buzz(numbers:list) -> bool:
 
     for i in range(len(numbers)):
         
+        # Check if the number in sequence should be "FizzBuzz" and if the original sequence has the text:
         if sequence[i] % 5 == 0 and sequence[i] % 3 == 0:
             if numbers[i] != "FizzBuzz":
                 return False
+
+        # Check if the number in sequence should be "Buzz" and if the original sequence has the text:
         elif sequence[i] % 5 == 0:
             if numbers[i] != "Buzz":
                 return False
+
+        # Check if the number in sequence should be "Fizz" and if the original sequence has the text:
         elif sequence[i] % 3 == 0:
             if numbers[i] != "Fizz":
                 return False

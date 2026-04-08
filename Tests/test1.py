@@ -1,6 +1,15 @@
-from datetime import datetime
+class Car:
 
+    # Define the initial function:
 
-fecha = datetime.strptime("05-04-2025", "%d-%m-%Y")
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
 
-print(fecha)
+car = Car("Toyota", "Pryus")
+
+for atribute in dir(car):
+    if not "__" in atribute and not callable(getattr(car,atribute)):
+        value = getattr(car,atribute)
+        print(f"{atribute}:{value}")
+
