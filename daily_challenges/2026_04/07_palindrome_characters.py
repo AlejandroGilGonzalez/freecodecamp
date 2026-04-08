@@ -19,8 +19,5 @@ def palindrome_locator(word:str) -> str:
 
     else:
         return ("none")
-            
-
-    return ""
 
 palindrome_locator("noon")
