@@ -39,7 +39,7 @@ def is_fizz_buzz(numbers:list) -> bool:
     # Check if the original sequence is valid:
 
     for i in range(len(numbers)):
-
+        
         if sequence[i] % 5 == 0 and sequence[i] % 3 == 0:
             if numbers[i] != "FizzBuzz":
                 return False
