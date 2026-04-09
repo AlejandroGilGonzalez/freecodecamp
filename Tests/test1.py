@@ -5,11 +5,13 @@ class Car:
     def __init__(self, brand, model):
         self.brand = brand
         self.model = model
+    
+    def example(self):
+        print(self.brand.upper())
+    
 
-car = Car("Toyota", "Pryus")
+car = Car("Toyota", "Pryus",)
 
-for atribute in dir(car):
-    if not "__" in atribute and not callable(getattr(car,atribute)):
-        value = getattr(car,atribute)
-        print(f"{atribute}:{value}")
+print(car.brand)
+print(car.example())
 
