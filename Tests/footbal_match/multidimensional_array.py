@@ -3,29 +3,69 @@
 from random import randint
 import json
 
-with open('players_array.json', encoding="utf8") as json_file:
+class Team:
+
+    def __init__(self, name):
+        self.name = name.upper()
+
+class Player:
+
+    def __init__(self, name):
+        self.name = name.capitalize()
+
+
+
+# Open the Json file with the starting teams and players:
+
+with open('players_array.json', encoding="utf-8") as json_file:
     copas = json.load(json_file)
 
-# Definir el ID y la puntuación de cada jugador:
+# Convert every team and player into objects:
 
-ide = 1
+teams = []
+players = []
+
+# Loops through every match and team in those matches:
+
 for partido, equipos in copas["copa_america"]["fase_grupos"].items():
-    for team, jugadores in equipos.items():
-        for jugador, stats in jugadores.items():
-            stats["Puntuación"] = randint(50,99)
-            json.dump(copas, open("players_array.json", "w", encoding="utf8"))
-            print(jugador,stats)
- 
 
-# Definir una función que compare las distintas puntuaciones por clase de jugador:        
+    # Loops through every player in each team:
+    
+    for team, jugadores in equipos.items():
+
+        # Creates an object for each team:
+
+        team_obj = Team(f"{team}")
+        teams.append(team_obj)
+
+        for jugador, stats in jugadores.items():
+
+        # Creates an object for each player:
+
+            player_obj = Player(f"{jugador}")
+            players.append(player_obj)
+
+for team in teams:
+    print(team.name)
+
+
+
+    
+
+# Saves changes in the json:
+
+#with open("players_array.json", "w", encoding="utf-8") as f:
+#    json.dump(copas, f, ensure_ascii=False, indent=4)
+            
+
+# Function that compares players punctuation by same position:        
 
 def lucha (equipo_local:dict, equipo_visitante:dict):
     
     for jugadores in equipo_local.values():
         for jugador, stats in jugadores.items():
-            if stats["Posición"] == equipo_visitante[jugadores][stats]["Posición"]:
-                print(yes)
-
+            for i in range(len(jugadores.keys())):
+                print(jugador)
     return ""
 
 
