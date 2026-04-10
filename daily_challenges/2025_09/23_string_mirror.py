@@ -29,6 +29,4 @@ def is_mirror(str1:str, str2:str) -> bool:
     else:
         return False
 
-
-
 is_mirror("Hello World", "dlroW-olleH")
