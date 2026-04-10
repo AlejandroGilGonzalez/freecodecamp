@@ -2,11 +2,8 @@
 class InsufficientAge(Exception):
     error_number = 101
     age = 98
-    
-    # Utilizamos SELF porque sino 
 
     def __init__(self, age):
-        self.age = age * 2
         super().__init__(f'error #{self.error_number}: Insufficient age: {self.age} years old')
 
 class TooAge(Exception):
@@ -32,19 +29,20 @@ class clase_ejemplo():
 
 age = 101
 ejemplo_objeto_1 = clase_ejemplo("Alex",27)
-ejemplo_objeto_2 = clase_ejemplo("Oscar",44)
+ejemplo_objeto_2 = clase_ejemplo("Oscar",-1)
 ejemplo_objeto_1.saludo()
 ejemplo_objeto_2.saludo()
 
-def main():
+def main(age):
     
     try:
         if age < 0:
             raise InsufficientAge(age)
 
         if age > 100:
-            raise TooAge(102)
+            raise TooAge(age)
+
     except (InsufficientAge,TooAge) as e:
         print(f"error raised:{e}")
 
-
+main(ejemplo_objeto_2.edad)
