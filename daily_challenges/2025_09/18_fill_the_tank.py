@@ -20,10 +20,9 @@ def cost_to_fill(tank_size:int, fuel_level:int, price_per_gallon:float) -> str:
 
     cost = remaining * price_per_gallon
 
-    print(cost)
     # Returns the total cost as string with 2 decimals in format "$d.dd":
-    round_cost = "{:.2f}".format(cost)
+    round_cost = "${:.2f}".format(cost)
 
-    return f"${round_cost}"
+    return (round_cost)
 
 cost_to_fill(20, 0, 4.00)
