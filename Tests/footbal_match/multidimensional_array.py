@@ -9,15 +9,13 @@ class Team:
         self.name = name.upper()
 
 class Player:
-
-    def __init__(self, name):
-        self.name = name.capitalize()
+    pass
 
 
 
 # Open the Json file with the starting teams and players:
 
-with open('players_array.json', encoding="utf-8") as json_file:
+with open('players_array.json', "r", encoding="utf-8") as json_file:
     copas = json.load(json_file)
 
 # Convert every team and player into objects:
@@ -41,12 +39,15 @@ for partido, equipos in copas["copa_america"]["fase_grupos"].items():
         for jugador, stats in jugadores.items():
 
         # Creates an object for each player:
-
-            player_obj = Player(f"{jugador}")
+            
+            player_obj = Player()
             players.append(player_obj)
 
-for team in teams:
-    print(team.name)
+            for key, value in stats.items():
+                setattr(player_obj, key, value)
+
+            
+print(team)
 
 
 
