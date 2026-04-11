@@ -40,6 +40,6 @@ def speeding(speeds:list, limit:int):
 
     # Return speeding vehicles and average:
 
-    print ([speeding_vehicles,average])
+    return ([speeding_vehicles,average])
 
 speeding([50, 60, 55], 60)
