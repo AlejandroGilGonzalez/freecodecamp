@@ -10,42 +10,43 @@ then left along the bottom row, then up the left column. Repeat inward for any r
 
 def spiral_matrix(matrix:list) -> list:
 
-    # Crear una nueva lista:
+    # Define the new list to return:
+
     new_list = []
 
-    while True:
+    while len(matrix) > 0: 
 
-        # Coger la primera fila y eliminar:
+        # Get the first row and delete it from matrix:
         new_list.extend(matrix[0])
-        matrix.remove(matrix[0])
+        del matrix[0]
 
         if len(matrix) == 0:
             break
 
-        # Coger la ultima columna y eliminar:
+        # Get the last column and delete it from matrix:
         for i in range(len(matrix)):
             new_list.append(matrix[i][-1])
-            matrix[i].remove(matrix[i][-1])
-        
+            del matrix[i][-1]
+            
         if len(matrix) == 0:
-            break
-        
-        # Coger la ultima fila reversed y eliminar
+            break        
+
+        # Get the last row reversed and delete it from matrix:
         new_list.extend(matrix[-1][::-1])
-        matrix.remove(matrix[-1])
+        del matrix[-1]
 
         if len(matrix) == 0:
             break
 
-        # Coger la primera columna reversed y eliminar
+        # Get the first column reversed and delete it from matrix:
         for i in range(len(matrix)-1,-1,-1):
             new_list.append(matrix[i][0])
-            matrix[i].remove(matrix[i][0])
-        
+            del matrix[i][0]
+
         if len(matrix) == 0:
             break
 
     print(new_list)
+    return new_list
 
-spiral_matrix([[True, False, False], [False, True, True], [False, True, False], [True, True, False]])
-
+spiral_matrix([["a", "b", "c", "d"], ["l", "m", "n", "e"], ["k", "p", "o", "f"], ["j", "i", "h", "g"]])
