@@ -10,20 +10,42 @@ then left along the bottom row, then up the left column. Repeat inward for any r
 
 def spiral_matrix(matrix:list) -> list:
 
-    # Define the new list to return:
-
+    # Crear una nueva lista:
     new_list = []
 
-    # Loop over the first row:
+    while True:
 
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            
+        # Coger la primera fila y eliminar:
+        new_list.extend(matrix[0])
+        matrix.remove(matrix[0])
 
+        if len(matrix) == 0:
+            break
 
+        # Coger la ultima columna y eliminar:
+        for i in range(len(matrix)):
+            new_list.append(matrix[i][-1])
+            matrix[i].remove(matrix[i][-1])
+        
+        if len(matrix) == 0:
+            break
+        
+        # Coger la ultima fila reversed y eliminar
+        new_list.extend(matrix[-1][::-1])
+        matrix.remove(matrix[-1])
+
+        if len(matrix) == 0:
+            break
+
+        # Coger la primera columna reversed y eliminar
+        for i in range(len(matrix)-1,-1,-1):
+            new_list.append(matrix[i][0])
+            matrix[i].remove(matrix[i][0])
+        
+        if len(matrix) == 0:
+            break
 
     print(new_list)
 
-    return matrix
+spiral_matrix([[True, False, False], [False, True, True], [False, True, False], [True, True, False]])
 
-spiral_matrix([[25, 24, 23, 22, 21], [10, 9, 8, 7, 20], [11, 2, 1, 6, 19], [12, 3, 4, 5, 18], [13, 14, 15, 16, 17]])
