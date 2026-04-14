@@ -1,3 +1,6 @@
-import string
+counter = 3
 
-print(string.ascii_lowercase)
+if counter in range(1,3):
+    print("yes")
+else:
+    print("No")
