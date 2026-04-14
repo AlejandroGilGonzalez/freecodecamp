@@ -1,5 +1,3 @@
-number = 5
+import string
 
-while number > 0:
-    print(number)
-    number -=1
+print(string.ascii_lowercase)
