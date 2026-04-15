@@ -26,7 +26,6 @@ def check_strength(password:str) -> str:
     if len(password) >= 8:
         strength_counter += 1
     
-    print (strength_counter)
 
     # Evaluate if contains both upper and lower characters:
     upper = False
@@ -63,5 +62,4 @@ def check_strength(password:str) -> str:
     elif strength_counter >= 4:
         return ("strong")
 
-    print(strength_counter)
 check_strength("PASSWORD!")
