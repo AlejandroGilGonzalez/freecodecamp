@@ -38,9 +38,8 @@ while attempts < 10:
         if not char in imposible_characters:
             counter = 0
             for word in posible_words:
-                if char in word:
-                    if not char in layout:
-                        counter += 1
+                if char in word and not char in layout:
+                    counter += 1
             char_appearance.append([char,counter])
 
     char_appearance = sorted(char_appearance, key= lambda x: x[1], reverse= True)
