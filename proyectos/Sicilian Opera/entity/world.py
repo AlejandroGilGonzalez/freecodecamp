@@ -1,3 +1,3 @@
 class World():
-    date = "A"
+    date = ""
     
