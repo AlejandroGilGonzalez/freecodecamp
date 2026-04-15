@@ -68,17 +68,18 @@ while attempts < 10:
     positions = re.finditer(top_char, s_word)
 
     # Change the layout with the character we found:
-    layout = layout.replace("\w", "_")
     for match in positions:
         place = match.start()
         layout = layout[:place] + top_char + layout[place + 1:]
 
+    # Print "Winner" if we found the complete word:
     if layout == s_word:
         print("\n*** GANADOR ***")
         print(f"La palabra era: '{layout}'")
         print(f"Numero de intentos: {attempts}")
         break
 
+# Print "Looser" if the program couldn't find the word in the given attempts:
 if layout != s_word:
     print("*** PERDEDOR ***")
     print(f"La palabra era: {s_word}")
