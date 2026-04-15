@@ -1,0 +1,57 @@
+
+- Crear un class Personaje:
+	- Nombre
+	- Edad
+	- Genero
+	- Nacionalidad
+	- Objetos[].
+	
+	Estado:
+	- Vida
+	- Cansancio
+	- Hambre
+	- Sed
+	
+	Atributos:
+	- Carisma
+	- Fuerza
+	- Destreza
+	- Fortaleza
+	- Inteligencia
+	
+	Habilidades:
+	- Robo
+	- Chantaje
+	
+Crear una clase NPC que extienda de Personaje.
+Crear una clase Jugador que extienda de Personaje.
+
+- Crear una clase Mundo:
+	- Día/Noche
+	- Fecha
+	- Hora
+	- Estación
+	- Habitaciones[]
+
+- Crear una clase Habitación:
+	- ID / Posición X Y
+	- Nombre
+	- Tipo (habitación cerrada / habitación abierta)
+	- Objetos [].
+
+- Crear una clase Objeto:
+	- ID.
+	- Nombre.
+	- Multiple si o no
+	- (cantidad o cantidad = 1)
+	- Peso.
+	- Cogible o Utilizable (bool).
+	- Usos (desgaste).
+	
+
+
+
+
+
+
+	
