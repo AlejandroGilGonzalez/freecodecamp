@@ -1,40 +1,93 @@
 import re
 import random
+import string
 
 # Get the dictionary from the txt file:
-
 with open("dics/dics.txt","r",encoding="utf-8") as f:
     dic = f.read()
 
 # Get a random word from the dictionary:
-
-s_word = random.choice(re.findall(r"[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+",dic))
+#[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]
+s_word = random.choice(re.findall(r"[a-z]+",dic))
 print(s_word)
 
-# Get a list of all the words with the same length as secret word.
+# Set the number of attempts:
+attempts = 0
 
-words_list = re.findall(layout,dic)
+# Set the imposible characters:
+imposible_characters = []
 
-# Print the layout:
-
-layout = "\w" * len(s_word)
+# Get a layout for the regex:
+layout = "_" * len(s_word)
 print(layout)
 
-# Find the count of each character to act as probability:
+# Loop for the number of attempts we have: 
+while attempts < 10:
 
-good_chars = "abcdefghijklmnñopqrstuvwxyz"
-good_chars += good_chars.upper() + "áéíóúÁÉÍÓÚñÑüÜ"
+    # Print the try number:
+    print(f"Intento nº{attempts+1}")
 
-probab = {}
+    # Replace underscore per "\w":
+    layout = layout.replace("_","\w")
 
-for char in dic:
-    if not char in probab.keys():
-        if char in good_chars:
-            probab[char] = dic.count(char)
+    # Search for the letter that appears the most in the words with that layout:
+    posible_words = re.findall(layout, dic, flags= re.IGNORECASE)
+    char_appearance = []
 
-# Sort characters by probability:
+    for char in string.ascii_letters:
+        if not char in imposible_characters:
+            counter = 0
+            for word in posible_words:
+                if char in word:
+                    if not char in layout:
+                        counter += 1
+            char_appearance.append([char,counter])
 
-top_chars = dict(sorted(probab.items(),key=lambda item:item[1],reverse=True))
+    char_appearance = sorted(char_appearance, key= lambda x: x[1], reverse= True)
+
+    # Give a name to the most probable character:
+    top_char = char_appearance[0][0]
+    print(top_char)
+
+    # Replace again layout with underscores "_":
+    layout = layout.replace("\w", "_")
+
+    # Compare with secret word to know if the most occurrent character appears or not:
+    
+    if not top_char in s_word:
+        imposible_characters.append(top_char)
+        attempts += 1
+        print(layout)
+        continue
+    else:
+        imposible_characters.append(top_char)
+        attempts += 1
+        print(layout)
+
+    # Compare with secret word to know the position of the most occurrent character:
+    positions = re.finditer(top_char, s_word)
+
+    # Change the layout with the character we found:
+    layout = layout.replace("\w", "_")
+    for match in positions:
+        place = match.start()
+        layout = layout[:place] + top_char + layout[place + 1:]
+
+    if layout == s_word:
+        print("\n*** GANADOR ***")
+        print(f"La palabra era: '{layout}'")
+        print(f"Numero de intentos: {attempts}")
+        break
+
+if layout != s_word:
+    print("*** PERDEDOR ***")
+    print(f"La palabra era: {s_word}")
+    print(f"Numero de intentos: {attempts}")
+    
+
+
+
+
 
 
 

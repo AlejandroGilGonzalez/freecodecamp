@@ -1,6 +1,11 @@
-counter = 3
+import re
 
-if counter in range(1,3):
-    print("yes")
-else:
-    print("No")
+word = "haallal"
+
+positions = re.finditer("a", word)
+
+for match in positions:
+    print(match.start())
+    word = word[:match.start()] + "-" + word[match.start()+1:]
+
+print(word)
