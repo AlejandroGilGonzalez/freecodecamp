@@ -30,16 +30,37 @@ def decode(message:str) -> str:
     # If message is longer than the key, repeat the key:
     while len(message) > len(key):
         key += key
+    
+    # Stablish a decoded message var:
+    decoded_message = []
+    
+    # Split the encoded message into a list:
+    encoded = message.split()
 
-    print(key)
-    # Loop over each letter in the encoded message:
-    for i in range(len(message)):
-        # Look by index at the corresponding letter in the key:
+    # Loop over each letter in each word from the message:
+    for word in encoded:
+        for i in range(len(word)):
+            decoded_word = ""
+            # Look by index at the corresponding letter in the key:
+            letter = key[i]
+
+            # Get the letter index in the alphabet to stablish a shift:
+            shift = alphabet.index(letter) + 1
+
+            # Shift the encoded letter backwards in the alphabet by that number:
+            # If the shift goes before A, start again from Z:
+            if alphabet.index(word[i]) - shift < 0:
+                shift = abs(alphabet.index(word[i]) - shift)
+            
+            decoded_letter = alphabet[::-1][shift]
+            decoded_word += decoded_letter
+        decoded_message.append(decoded_word)
+            
+    print(decoded_message)
 
         
         
-        # Get the letter in the key
-        letter = key[i]
+        
 
     
     return ""
