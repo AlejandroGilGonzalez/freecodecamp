@@ -30,18 +30,37 @@ def decode(message:str) -> str:
     # If message is longer than the key, repeat the key:
     while len(message) > len(key):
         key += key
-
-    print(key)
-    # Loop over each letter in the encoded message:
+    # Include spaces in the key:
     for i in range(len(message)):
-        # Look by index at the corresponding letter in the key:
-
-        
-        
-        # Get the letter in the key
-        letter = key[i]
-
+        if not message[i].isalpha():
+            key = key[:i] + " " + key [i:]
     
-    return ""
+    # Stablish a decoded message var:
+    decoded_message = ""
+    # Loop over each word and each letter in the encoded message:
+    for i in range(len(message)):
+        if message[i].isalpha():
+            # Look by index at the corresponding letter in the key:
+            letter = key[i]
+            
+            # Convert the letter to its corresponding number:
+            shift = alphabet.index(letter) + 1
 
-decode("W IQQURV UG I ZDMDTRV IVW JQDHY TMHSA QB")
+            # Shift the encoded letter n times backwards in the alphabet:
+            if alphabet.index(message[i]) - shift < 0:
+                reminder = abs(alphabet.index(message[i]) - shift)
+                result = len(alphabet) - reminder
+            else:
+                result = alphabet.index(message[i]) - shift
+
+            decoded_letter = alphabet[result]
+
+            decoded_message += decoded_letter
+
+        # If character is space return as it is:
+        else:
+            decoded_message += message[i]
+
+    return(decoded_message)
+
+decode("YALLUT PQUMJP")
