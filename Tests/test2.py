@@ -1,9 +1,20 @@
-import string
+def carga():
+    lista = []
+    for i in range(4):
+        numero = input("Introduzca un número: ")
+        lista.append(int(numero))
+    return lista
 
-alphabet = string.ascii_uppercase
-Inicio = alphabet.index("V")
-letter = "Y"
-result = alphabet.index("Y") - 22
+def mayor(lista):
+    mayor = 0
+    for i in range(len(lista)):
+        if lista[i]>mayor:
+            mayor = lista[i]
+    
+    return mayor
 
-print(Inicio)
-print(alphabet[result])
+def suma(lista):
+    return sum(lista)
+
+
+

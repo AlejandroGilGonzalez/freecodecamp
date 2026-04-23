@@ -16,23 +16,10 @@ def find_sum(arr:list, target:int) -> list:
     # Create a list of numbers to return:
     result = []
 
-    # Create a check var:
-    check = 0
+    # For each number create a decisión tree:
+    
 
-    # Check which numbers sum to the target:
-    for i in range(len(arr)):
-        # If adding the number is lower than the target, append it:
-        if arr[i] + check < target:
-            result.append(arr[i])
-            check += arr[i]
-        # If adding the number is greater than the target, continue:
-        elif arr[i] + check > target:
-            continue
-        # If adding the number ads up to the target, return the array:
-        elif arr[i] + check == target:
-            result.append(arr[i])
-            print(result)
 
-    return "Sum not found"
 
-find_sum([1, 3, 5, 7], 6)
+
+find_sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 20)
