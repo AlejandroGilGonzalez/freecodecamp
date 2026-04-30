@@ -30,39 +30,37 @@ def decode(message:str) -> str:
     # If message is longer than the key, repeat the key:
     while len(message) > len(key):
         key += key
+    # Include spaces in the key:
+    for i in range(len(message)):
+        if not message[i].isalpha():
+            key = key[:i] + " " + key [i:]
     
     # Stablish a decoded message var:
-    decoded_message = []
-    
-    # Split the encoded message into a list:
-    encoded = message.split()
-
-    # Loop over each letter in each word from the message:
-    for word in encoded:
-        for i in range(len(word)):
-            decoded_word = ""
+    decoded_message = ""
+    # Loop over each word and each letter in the encoded message:
+    for i in range(len(message)):
+        if message[i].isalpha():
             # Look by index at the corresponding letter in the key:
             letter = key[i]
-
-            # Get the letter index in the alphabet to stablish a shift:
+            
+            # Convert the letter to its corresponding number:
             shift = alphabet.index(letter) + 1
 
-            # Shift the encoded letter backwards in the alphabet by that number:
-            # If the shift goes before A, start again from Z:
-            if alphabet.index(word[i]) - shift < 0:
-                shift = abs(alphabet.index(word[i]) - shift)
-            
-            decoded_letter = alphabet[::-1][shift]
-            decoded_word += decoded_letter
-        decoded_message.append(decoded_word)
-            
-    print(decoded_message)
+            # Shift the encoded letter n times backwards in the alphabet:
+            if alphabet.index(message[i]) - shift < 0:
+                reminder = abs(alphabet.index(message[i]) - shift)
+                result = len(alphabet) - reminder
+            else:
+                result = alphabet.index(message[i]) - shift
 
-        
-        
-        
+            decoded_letter = alphabet[result]
 
-    
-    return ""
+            decoded_message += decoded_letter
 
-decode("W IQQURV UG I ZDMDTRV IVW JQDHY TMHSA QB")
+        # If character is space return as it is:
+        else:
+            decoded_message += message[i]
+
+    return(decoded_message)
+
+decode("YALLUT PQUMJP")
