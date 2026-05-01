@@ -61,6 +61,6 @@ def decode(message:str) -> str:
         else:
             decoded_message += message[i]
 
-    return(decoded_message)
+    print(decoded_message)
 
 decode("YALLUT PQUMJP")
